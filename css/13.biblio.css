@@ -1,0 +1,13 @@
+/*13.biblio.css*/
+
+
+journaltitle {
+  color: #FF0066;
+  font-style: italic;
+}
+
+
+bibentry>booktitle {
+  color: #FF0066;
+  font-style: italic;
+}

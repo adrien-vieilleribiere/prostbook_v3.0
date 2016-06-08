@@ -1,0 +1,51 @@
+/*XMETAL CSS for prostbook_v2.3*/
+@import url(css/00.general.css);
+@import url(css/02.metadata.css);
+@import url(css/04.inline.css);
+@import url(css/05.block.css);
+@import url(css/06.hierarchy.css);
+@import url(css/07.table.css);
+@import url(css/08.figure.css);
+@import url(css/09.math.css);
+@import url(css/10.note.css);
+@import url(css/11.code.css);
+@import url(css/12.index.css);
+@import url(css/13.biblio.css);
+
+/* XMETAL specific declarations. Do not work with Oxygen */
+
+/* Use Times New Roman for default font */
+
+$DOCUMENT {
+  font-family: "Times New Roman";
+  font-size: 12pt;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+$COMMENT {
+  display: block;
+  color: #FF3366;
+  white-space: pre;
+  font-weight: bold;
+}
+
+$PROCINS {
+  color: black;
+  background-color: #c0c0c0;
+}
+
+$MARKSEC {
+  white-space: pre;
+  display: block;
+  font-size: 9pt;
+  color: #CC0033;
+}
+
+
+
+
+
+
+
+

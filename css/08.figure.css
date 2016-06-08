@@ -1,0 +1,62 @@
+/*08.figure.css*/
+/*comment forcer le scaling dans Xmetal ???*/
+/*
+figure>img {
+  display: none;
+  content: attr(src, url);
+  margin-left: 10px;
+ max-width: 50%;
+  border: 50px #ccc solid;
+  margin-top: 0pt;
+  margin-right: 0pt;
+  margin-bottom: 10px;
+  padding: 5px;
+}*/
+
+label>img {
+  display: inline;
+  border-top: none;
+}
+
+
+img {
+
+}
+
+
+figure {
+  text-align: center;
+  display: block;
+  counter-increment: figure;
+}
+
+figure:before {
+  content: "[id="attr(id-figure)", class="attr(class)", fig"counter(figure)"]";
+  font-weight: bold;
+  color: #FF8000;
+}
+
+
+captionblock>p {
+  color: #CC3300;
+  font-size: 9pt;
+}
+
+
+caption {
+  display: block;
+  margin-top: 5pt;
+  text-align: center;
+}
+
+caption:before {
+  color: blue;
+  content: "[shortToc:"attr(shortToc)"]";
+}
+
+captionblock {
+  display: block;
+  text-align: left;
+  margin-left: 50pt;
+  margin-bottom: 30pt;
+}

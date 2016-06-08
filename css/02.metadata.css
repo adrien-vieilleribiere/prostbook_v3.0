@@ -1,0 +1,81 @@
+/*02.metadata.css*/
+/*2011.09.13 update bpro */
+
+meta {
+  background-color: #F4ECFB;
+  display: block;
+}
+
+dc\:title {
+  display: block;
+}
+
+dc\:creator {
+  display: block;
+}
+
+dc\:publisher {
+  display: block;
+}
+
+ox\:Publisher:before{
+content:"[PublishingRole="attr(PublishingRole)"]";
+color:blue;
+}
+
+dc\:date {
+display:block;}
+
+dc\:type{
+display:block;}
+
+dc\:type:before{
+content:"[class="attr(class)"]";
+color:blue;
+}
+
+dc\:format{
+display:block;}
+
+dc\:format:before{
+content:"[class="attr(class)"]";
+color:blue;
+}
+
+
+dc\:source {
+display:block;}
+
+dc\:relation {
+  display: block;
+}
+
+dc\:language {
+  display: block;
+}
+
+
+dc\:language:before {
+  content:"[language="attr(language) "]";
+  color:blue;
+}
+
+dc\:language:after {
+  content:"]";
+  color:blue;
+}
+
+ox\:CoverImageLink :before {
+content:"[MediaFileLink="attr(MediaFileLink)"]";
+color:blue;
+}
+
+ox\:SubTitle :before {
+content:"[SubTitle]";
+color:blue;
+}
+
+ox\:SubTitle {
+display:block;
+}
+

@@ -1,0 +1,31 @@
+/*12.index.css*/
+
+
+indexanchor[id-indexanchor]:before {
+  content: "[id-indexanchor="attr(id-indexanchor)"] [refindex-name="attr(refindex-name)"] [refid-indexentry="attr(refid-indexentry)"] ";
+  color: blue;
+  font-size: 8pt;
+}
+
+
+indexentry:before {
+  content: "[index-name="attr(index-name)", id-indexentry="attr(id-indexentry)", indexentry-sort="attr(indexentry-sort)"]";
+  color: blue;
+  font-size: 7pt;
+}
+
+subindex {
+  display: block;
+}
+
+indexentry>subindex {
+  margin-left: 30pt;
+}
+
+subindex>subindex {
+  margin-left: 25pt;
+}
+
+indexentry>subindex>subindex {
+  margin-left: 30pt;
+}

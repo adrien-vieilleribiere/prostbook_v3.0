@@ -1,0 +1,140 @@
+/*05.block.css*/
+/* 2011.09.13 update bpro */
+
+
+
+bib {
+  display: block;
+}
+
+
+/*------DIV-------------*/ 
+div {
+  display: block;
+  color: #FF6600;
+  text-align: left;
+  border:solid 1px blue;
+  margin:5px;
+  padding:5px;
+}
+div[align='center'] {
+  text-align: center;
+}
+
+div[align='right'] {
+  text-align: right;
+}
+
+div>p {
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+}
+
+div>title {
+  font-weight: bold;
+  color: #003399;
+}
+
+section>div {
+  display: block;
+  background-color: #FFCCCC;
+  margin-top: 15pt;
+}
+
+section>div>div {
+  display: block;
+  background-color: #FFECEF;
+  margin-top: 20pt;
+  margin-left: 20pt;
+  margin-bottom: 15pt;
+}
+
+
+div[class]:before {
+  content: "{" attr(class)"}";
+  color: blue;
+}
+
+/*paragraph*/
+
+p {
+  display: block;
+  margin-top: 10pt;
+  margin-bottom: 5pt;
+  padding-left: 10pt;
+}
+
+p[class] {
+  content:"[class="attr(class)"]";
+  color: blue;
+}
+
+p[class='author'] {
+  display: block;
+  font-size: 10pt;
+  text-align: right;
+  margin-bottom: 10pt;
+}
+
+/* list*/
+
+list {
+  display: block;
+  list-style-type: circle;
+}
+
+
+item {
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 15pt;
+}
+
+
+item item {
+  display: list-item;
+  list-style-type: square;
+}
+
+
+/* blankline */
+
+blankline {
+  text-align: center;
+  display: block;
+}
+
+
+blankline[type='triple_star']:before {
+  content: "***";
+  text-align: center;
+  font-weight: bold;
+}
+/*deflist*/
+
+
+/*linegroup*/
+
+
+linegroup{
+  display: block;
+  background-color: #FFCC00;
+  margin-bottom: 15pt;
+}
+
+l {
+  display: block;
+}
+
+vsp:before {
+content:"[(forced typographical) height="attr(height)"]";
+color:blue;
+text-align:center;
+}
+
+
+
+
+
+

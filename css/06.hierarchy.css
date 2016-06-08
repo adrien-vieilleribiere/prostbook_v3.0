@@ -1,0 +1,288 @@
+/*06.hierarchy.css*/
+
+
+prepage {
+  border: 1pt #FF3300 solid;
+  display: block;
+  margin-top: 15pt;
+}
+
+prepage[class]:before {
+  content: "[class="attr(class)"]";
+  color: blue;
+}
+
+
+postpage[class]:before {
+  content: "[class="attr(class)"]";
+  color: blue;
+}
+
+
+title[hidden='yes'] {
+  display: block;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+titles>title {
+  display: block;
+  align: center;
+}
+
+
+
+titles {
+  background-color: #FFFFE4;
+  display: block;
+}
+
+
+/* -------------sections avec parties----------------------- */
+section {
+  display: block;
+  foldable: true;
+  not-foldable-child: title;
+}
+
+section[cut]:before {
+ content: "[cut="attr(cut)" ]";
+ color:red;
+ font-weight:bold;
+}
+
+section>p {
+  padding-left: 15pt;
+  float: none;
+  clear: none;
+  border-left: 1pt;
+}
+
+
+part {
+  counter-increment: part;
+}
+
+part:before {
+  content: "[id="attr(id)" ] ""part" counter(part) ".";
+  font-size: 12pt;
+  font-weight: bold;
+  color: #FF8000;
+}
+
+part>chapter {
+  counter-increment: chapter;
+  counter-reset: chapter;
+}
+
+part>chapter:before {
+  content: "[id="attr(id)" ] ""part" counter(part) ".chapter" counter(chapter);
+  font-size: 12pt;
+  font-weight: bold;
+  color: #FF8000;
+}
+
+part>chapter>section {
+  counter-increment: section;
+  counter-reset: sub-section;
+}
+
+part>chapter>section:before {
+  content: "[id="attr(id)" ] ""part" counter(part) ".chapter" counter(chapter) ".section" counter(section);
+  font-size: 12pt;
+  font-weight: bold;
+  color: #FF8000;
+}
+
+part>chapter>section>section {
+  counter-increment: sub-section;
+}
+
+part>chapter>section>section:before {
+  content: "[id="attr(id)" ] ""part" counter(part) ".chapter" counter(chapter) ".section" counter(section) ".sub-section" counter(sub-section);
+  font-size: 12pt;
+  color: #FF8000;
+}
+
+/* sections sans parties */
+chapter:before {
+  content: "[id-chapter =" attr(id-chapter) ", cut="attr(cut)"]";
+  color: blue;
+  font-size: 9pt;
+  font-weight: normal;
+}
+
+
+chapter {
+  display: block;
+  margin-top: 20pt;
+}
+
+
+section>section {
+  margin-top: 20pt;
+}
+
+
+chapter>p {
+  background-color: #FFFFFF;
+  margin-left: 15pt;
+  margin-right: 15pt;
+}
+
+front>chapter {
+  background-color: #CCFFCC;
+}
+
+front>chapter>titles>title {
+  font-weight: bold;
+}
+
+body>part {
+  font-size: 12pt;
+  background-color: #E2F8E0;
+  display: block;
+}
+
+body>part >chapter {
+  font-size: 12pt;
+  margin-left: 15pt;
+  background-color: #FFF471;
+}
+
+body>part >chapter>section {
+  font-size: 12pt;
+  margin-left: 30pt;
+  background-color: #FFF9A8;
+}
+
+body>part >chapter>section>section {
+  margin-left: 25pt;
+  background-color: #FFFBCC;
+  margin-left: 25pt;
+}
+
+body>part>chapter>section>section>section {
+  margin-left: 25pt;
+  background-color: #F8F8F8;
+  margin-left: 25pt;
+}
+
+/* section  titles */
+front_chapter>titles>title {
+  font-size: 20pt;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40pt;
+  margin-bottom: 20pt;
+}
+
+body>part>titles>title {
+  display: block;
+  font-size: 24pt;
+  text-align: center;
+  font-weight: bold;
+  color: #33CC33;
+  margin-top: 20pt;
+  margin-bottom: 20pt;
+}
+
+body>part >chapter>titles>title {
+  font-size: 20pt;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40pt;
+  margin-bottom: 20pt;
+}
+
+body>part>chapter>titles>title {
+  display: block;
+  background-color: #FFFFC4;
+  margin-bottom: 20pt;
+}
+
+body>part >chapter>section>titles>title {
+  font-size: 16pt;
+  text-align: left;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+body>part>chapter>section>section>titles>title {
+  font-size: 14pt;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+body>part>chapter>section>section>section>titles>title {
+  font-size: 12pt;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* sections niveau chapitre sans parties */
+body>chapter {
+  font-size: 12pt;
+  margin-left: 15pt;
+  background-color: #FFF471;
+}
+
+body>chapter>section {
+  font-size: 12pt;
+  margin-left: 30pt;
+  background-color: #FFF9A8;
+}
+
+body>chapter>section>section {
+  margin-left: 25pt;
+  background-color: #FFFBCC;
+  margin-left: 25pt;
+}
+
+body>chapter>section>section>section {
+  margin-left: 25pt;
+  background-color: #F8F8F8;
+  margin-left: 25pt;
+}
+
+/* section titles, starting chapter level */
+body>chapter>title {
+  font-size: 20pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+ 
+body>chapter>titles>title {
+  font-size: 20pt;
+  text-align: center;
+  font-weight: bold;
+} 
+
+body>chapter>section>titles>title {
+  font-size: 16pt;
+  text-align: left;
+  font-weight: bold;
+}
+
+body>chapter>section>section>titles>title {
+  font-size: 14pt;
+  text-decoration: underline;
+}
+
+body>chapter>section>section>section>titles>title {
+  font-size: 12pt;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+
+title:before {
+  content: "[id-title =" attr(id-title) "] [shorttoc =" attr(shorttoc) "] [short-running-head=" attr(short-running-head) "]";
+  color: blue;
+  font-size: 9pt;
+  font-weight: normal;
+}

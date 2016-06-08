@@ -1,0 +1,89 @@
+/*04.inline.css*/
+
+
+pagestartbreak:before {
+  color: blue;
+  font-style: normal;
+  font-size: 12pt;
+  content: "["attr(page-number)"] ";
+}
+
+i {
+  font-style: italic;
+  color:brown;
+}
+
+b {
+  font-weight: bold;
+}
+
+sup {
+  vertical-align: super;
+}
+
+sc {
+  color: #FF3333;
+}
+
+
+century {
+  color: #CC3399;
+  font-weight: bold;
+}
+
+br {
+  display: block;
+}
+
+forcedpagebreak:before {
+  content:"[page_cut--------------------------page_cut]";
+  color:blue;
+  display: block;
+  margin-top:20px;
+  text-align:center;
+}
+
+
+label {
+  color: #CC6600;
+  font-weight: bolder;
+}
+
+link {
+  text-decoration: underline;
+}
+
+
+link:before {
+  content: "[refid-codeblock="attr(refid-codeblock)"] ";
+  color: blue;
+  font-size: 10pt;
+}
+
+
+span {
+  font-variant: small-caps;
+  background-color: #CCFFFF;
+}
+
+span:before {
+  content: "[class="attr(class)"]";
+  color: blue;
+}
+
+anchor:before{
+content:"[id-anchor="attr(id-anchor)"]";
+color:blue;
+font-weight:0;
+}
+
+ref{
+text-decoration:underline;
+}
+
+
+ref:before{
+  content: "[refid="attr(refid)"]";
+  color: blue;
+  text-decoration:none;
+}

@@ -1,0 +1,13 @@
+/*07.table.css*/
+
+
+thead {
+  font-weight: bold;
+  color: #FF6600;
+  display: block;
+}
+
+thead p {
+  color: #FF6600;
+  font-weight: bold;
+}

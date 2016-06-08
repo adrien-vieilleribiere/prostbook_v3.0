@@ -1,0 +1,24 @@
+/*0.general.css*/
+
+prostbook {
+  margin-right: 50pt;
+  margin-left: 50pt;
+  display: block;
+}
+
+prostbook:before {
+  content: "[DTD="attr(DTDVersion)", bookid="attr(bookid)", collectionid="attr(collectionid)"]";
+  font-weight: bold;
+  color: #FF8000;
+}
+
+
+prod_notes {
+  background-color: #FFFF66;
+}
+
+prod_notes>p {
+  background-color: #FFFFCC;
+}
+
+

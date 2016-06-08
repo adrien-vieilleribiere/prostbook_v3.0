@@ -1,0 +1,14 @@
+/*11.code.css*/
+
+
+code {
+  font-family: monospace;
+  font-size: 9pt;
+  color: #3300CC;
+}
+
+
+codeblock:before {
+  content: "[id-codeblock="attr(id-codeblock)"] ";
+  color: blue;
+}

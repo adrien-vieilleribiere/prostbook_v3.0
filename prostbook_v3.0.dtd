@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- prostbook.dtd : 
+(c) CeCILL bernard prost, adrien vieilleribiere, alain pierrot, henri couet
+DTDversion : v3.0 
+creation : 2014.03.02
+DTD URL : http://schema.prod3.mybookforge.com/prostbook_v3.0/prostbook_v3.0.dtd
+Cecill license URL : http://www.cecill.info/licences/Licence_CeCILL_V2-fr.html
+-->
+
+<!--***highest level element***-->
+
+
+<!ELEMENT prostbook (prodnotes?, meta, front?, body, back?)                    >
+<!ATTLIST prostbook DTDVersion (v3.0) #REQUIRED  
+                    xmlns       CDATA "http://ligaran.com/dtd/"          
+				    xmlns:ox CDATA "http://www.editeur.org/onix/2.1/reference/"
+				    xmlns:ns CDATA "http://ligaran.com/dtd/"
+				    xmlns:m CDATA "http://www.w3.org/1998/Math/MathML"
+				    xmlns:dc CDATA "http://purl.org/dc/elements/1.1/" 
+	                bookid ID          #IMPLIED
+                    collectionid CDATA #IMPLIED                                >
+
+
+<!ENTITY % MATHML.prefixed "INCLUDE"                                           >
+<!ENTITY % MATHML.prefix "m"                                                   >
+<!ENTITY % mathml SYSTEM "mathml2/mathml2.dtd"      >
+%mathml;
+
+<!-- Languages are choosen from ISO 639-1: two-letter codes, one per language or ISO 639 macrolanguage -->
+<!ENTITY % languages "fr-FR|en-GB|en-US|es-ES|he-IL|el-GR|it-IT|de-DE|fr|en|sp|he|el|km|it|la|de" >
+<!ENTITY % languages2letters "fr|en|sp|he|el|km|it|la|de">
+
+
+<!--elements entities -->
+<!ENTITY % typo    "#PCDATA|i|b|normal|sub|sup|sc|century|br"                  >
+<!ENTITY % float   "pagestartbreak|indexanchor|floatingncx"                    >
+<!ENTITY % inline  "%typo;
+                   |%float;
+                   |prodcomment
+                   |anchor
+                   |indexmarker|indexmarkerend
+                   |link|span|ref
+                   |ph|hsp
+                   |inlinemediadependant
+                   |img |video |audio
+                   |eqn
+                   |noteentry
+                   |code
+                   |bibentry"                                                  >
+
+<!ENTITY % block    "%float;
+                   |div
+                   |p|list
+                   |blankline
+                   |deflist
+                   |linegroup
+                   |table
+                   |figure |video |audio
+                   |codeblock
+                   |indexentry
+                   |bib
+                   |source
+                   |blockmediadependant
+                   |forcedpagebreak
+                   |vsp
+                   |extract
+                   |tocmaker"                                       >
+
+<!ENTITY % titlepageElements "booktitle
+                      |booksubtitle
+                      |bookauthors
+                      |bookpublisher
+                      |bookcopyright
+                      |booktranslators
+                      |bookean
+                      |bookisbn
+                      |bookissn
+                      |bookdedication
+                      |bookinscription
+                      |bookscientificeditor"                        >     
+
+<!--modular (shared) DTD -->
+
+<!ENTITY % comments_english    SYSTEM "00.comments_english.mod"                >
+<!ENTITY % comments_french     SYSTEM "00.comments_french.mod"                 >
+<!ENTITY % entities_characters SYSTEM "01.entities_characters.mod"             >
+<!ENTITY % metadata            SYSTEM "02.metadata.mod"                        >
+<!ENTITY % toc                 SYSTEM "03.toc.mod"                             >
+<!ENTITY % commoninline        SYSTEM "04.inline.mod"                          >
+<!ENTITY % commonblock         SYSTEM "05.block.mod"                           >
+<!ENTITY % hierarchy           SYSTEM "06.hierarchy.mod"                       >
+<!ENTITY % table               SYSTEM "07.table.mod"                           >
+<!ENTITY % figure              SYSTEM "08.figure.mod"                          >
+<!ENTITY % video               SYSTEM "08.video.mod"                           >
+<!ENTITY % audio               SYSTEM "08.audio.mod"                           >
+<!ENTITY % math                SYSTEM "09.math.mod"                            >
+<!ENTITY % note                SYSTEM "10.note.mod"                            >
+<!ENTITY % code                SYSTEM "11.code.mod"                            >
+<!ENTITY % index               SYSTEM "12.index.mod"                           >
+<!ENTITY % biblio              SYSTEM "13.biblio.mod"                          >
+
+
+%comments_english;
+%comments_french;
+%entities_characters;
+%metadata;
+%toc;
+%commoninline;
+%commonblock;
+%hierarchy;
+%table;
+%figure;
+%video;
+%audio;
+%math;
+%note;
+%code;
+%index;
+%biblio;
+
+
+<!--***book hierarchy***-->
+
+<!ELEMENT prodnotes   (%block;)*                                               >
+
+<!ELEMENT front    (titlepage|prepage|blockmediadependant)*                    >
+
+<!ELEMENT body    (prepage*, 
+                   (chapter*),
+                   (part*|uppart*|upuppart*),
+                   (postpage|blockmediadependant)*)                            >
+                        
+
+
+<!ELEMENT back         (postpage)*                                             >
+
+<!--titlepage
+author declared in bibliography
+source declared in bibliography -->
+<!ELEMENT titlepage  (pagestartbreak|div
+                      |booktitle
+                      |booksubtitle
+                      |bookauthors
+                      |bookpublisher
+                      |bookcopyright
+                      |booktranslators
+                      |bookean
+                      |bookisbn
+                      |bookissn
+                      |bookdedication
+                      |bookinscription
+					  |bookscientificeditor
+					  |blockmediadependant
+					  |vsp )*                >
+
+<!ATTLIST titlepage       class CDATA      #IMPLIED
+                          id-titlepage ID  #IMPLIED
+                          shorttoc CDATA  #IMPLIED                           
+                          displayncx (no) #IMPLIED   
+                          displaytocmaker (no) #IMPLIED >
+
+<!ELEMENT booktitle       (%inline;)*            >
+<!ELEMENT booksubtitle    (%inline;)*            >
+<!ELEMENT bookauthors     (author+)              >
+<!ELEMENT bookpublisher   (%inline;)*            >
+<!ELEMENT bookcopyright   (p)*                   >
+<!ELEMENT booktranslators (%inline;)*            >
+<!ELEMENT bookean         (%inline;)*            >
+<!ELEMENT bookisbn        (%inline;)*            >
+<!ELEMENT bookissn        (%inline;)*            >
+<!ELEMENT bookdedication  (%inline;)*            >
+<!ELEMENT bookinscription (p|source|author)*     >
+<!ELEMENT bookscientificeditor   (%inline;)*     >
+

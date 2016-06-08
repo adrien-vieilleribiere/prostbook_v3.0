@@ -1,0 +1,54 @@
+/*10.note.css*/
+/* 2011.09.13 update bpro */
+
+
+noteentry>note>p {
+  background-color: #99FF99;
+}
+
+note_entry>label {
+  background-color: #FFFFCC;
+  vertical-align: super;
+  font-size: 8pt;
+}
+
+note_entry {
+  background-color: #D7FFD7;
+}
+
+notecall {
+  vertical-align: super;
+}
+
+note {
+  background-color: #FFFFFF;
+  display: inline;
+  font-size: 11pt;
+}
+
+note :before {
+  content: "[type="attr(type)" ";
+  font-weight: bold;
+  display: inline;
+  color:blue;
+}
+
+note :after {
+  content: "]";
+  font-weight: bold;
+  display: inline;
+  color: blue;
+}
+
+note>p {
+  display: inline;
+}
+/*
+note>p:after {
+  content: " }";
+}
+
+note>p:before {
+  content: "{ ";
+}
+*/
